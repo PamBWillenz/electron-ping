@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/PamBWillenz/electron-ping#readme",
   "devDependencies": {
-    "electron": "^1.7.5"
+    "electron": "^1.7.5",
+    "electron-main-notification": "^1.0.1"
   }
-  
 }

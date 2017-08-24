@@ -1,4 +1,5 @@
 const {app, Menu, Tray} = require('electron')
+const notify = require('electron-main-notification')
 
 let tray = null
 app.on('ready', () => {
@@ -15,4 +16,15 @@ app.on('ready', () => {
   ])
   tray.setToolTip('This is my application.')
   tray.setContextMenu(contextMenu)
+})
+
+app.on('ready', () => {
+  let intervalID = setInterval(function(){
+    notify('This is a notification!', { body: 'See? Really easy to use!' }, () => {
+      console.log('The notification got clicked on!')
+    })
+  }, 1000)
+  notify('This is a notification!', { body: 'See? Really easy to use!' }, () => {
+    console.log('The notification got clicked on!')
+  })
 })
